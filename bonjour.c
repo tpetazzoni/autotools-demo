@@ -2,6 +2,6 @@
 
 int main(void)
 {
-	say("Hello World");
+	say("Bonjour Monde");
 	return 0;
 }
