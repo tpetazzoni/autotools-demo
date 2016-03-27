@@ -1,0 +1,28 @@
+
+ * AC_DEFINE([HAVE_SYNC_1BYTE_FUNCS], [1],
+             [Whether __sync_*() functions for 1 byte types are available])
+
+ * #include <stdint.h>
+
+ * AC_MSG_CHECKING([for __sync functions for 1 byte types])
+   AC_MSG_RESULT([yes])
+   AC_MSG_RESULT([no])
+
+AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <stdint.h>],
+	[uint8_t a; __sync_fetch_and_add(&a, 3);])],
+	[AC_MSG_RESULT([yes]); AC_DEFINE([HAVE_SYNC_1BYTE_FUNCS], [1],
+             [Whether __sync_*() functions for 1 byte types are available])],
+	[AC_MSG_RESULT([no])])
+
+ * With cache variable
+
+AC_CACHE_CHECK([for __sync functions for 1 byte types], [ac_cv_func_sync_1byte],
+	[AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <stdint.h>],
+		[uint8_t a; __sync_fetch_and_add(&a, 3);])],
+		[ac_cv_func_sync_1byte=yes],
+		[ac_cv_func_sync_1byte=no])])
+if test "${ac_cv_func_sync_1byte}" = "yes" ; then
+   AC_DEFINE([HAVE_SYNC_1BYTE_FUNCS], [1],
+             [Whether __sync_*() functions for 1 byte types are available])
+fi
+
