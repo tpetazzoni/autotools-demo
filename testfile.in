@@ -1,3 +1,0 @@
-abs_builddir = @abs_builddir@
-FOO = @FOO@
-CC = @CC@
