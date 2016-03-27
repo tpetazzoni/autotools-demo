@@ -1,6 +1,0 @@
-
-PKG_CHECK_MODULES([CURL], [libcurl])
-
- -> grep CURL_ config.log
-
- -> link still fails
