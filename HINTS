@@ -1,6 +1,6 @@
 
-if test "${enable_debug}" = "yes" ; then
-   AC_DEFINE([DEBUG_ENABLED], [1], [Whether debugging is enabled])
-fi
+PKG_CHECK_MODULES([CURL], [libcurl])
 
--> change default value: enable_debug=yes
+ -> grep CURL_ config.log
+
+ -> link still fails
