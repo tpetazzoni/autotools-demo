@@ -1,2 +1,12 @@
-+hello_CPPFLAGS = -I$(top_srcdir)/include
-+hello_LDADD = libdemo.la
+diff --git a/configure.ac b/configure.ac
+index 0a559d6..83397db 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -5,6 +5,7 @@ AC_CONFIG_AUX_DIR([build-aux])
+ LT_INIT
+ LT_PREREQ([2.4])
+ AM_INIT_AUTOMAKE([foreign 1.13 subdir-objects])
++AM_SILENT_RULES([yes])
+ AC_PROG_CC
+ AC_CHECK_FUNCS([printf foobar])
+ AC_SEARCH_LIBS([dlopen], [dl])

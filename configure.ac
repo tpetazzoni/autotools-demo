@@ -1,7 +1,6 @@
 AC_INIT([hello], [1.0])
 AC_PREREQ([2.69])
 AC_CONFIG_SRCDIR([src/hello.c])
-AC_CONFIG_AUX_DIR([build-aux])
 LT_INIT
 LT_PREREQ([2.4])
 AM_INIT_AUTOMAKE([foreign 1.13 subdir-objects])
