@@ -1,0 +1,13 @@
+
+ - Add LT_INIT / LT_PREREQ in configure.ac
+
+ - In Makefile.am:
+
++bonjour_SOURCES = src/bonjour.c src/say.c src/common.h
+ if DEBUG_ENABLED
+-hello_SOURCES += src/debug.c
++lib_LTLIBRARIES = libdemo.la
++libdemo_la_SOURCES = lib/debug.c
++libdemo_la_LDFLAGS = -version-info 0:0:0
+ endif
+-bonjour_SOURCES = src/bonjour.c src/say.c src/common.h
