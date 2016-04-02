@@ -1,12 +1,22 @@
+diff --git a/Makefile.am b/Makefile.am
+index 26397e2..f6a0607 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1,3 +1,4 @@
++ACLOCAL_AMFLAGS = -I m4
+ bin_PROGRAMS = hello bonjour
+ hello_SOURCES = src/hello.c src/say.c src/common.h
+ hello_CPPFLAGS = -I$(top_srcdir)/include
 diff --git a/configure.ac b/configure.ac
-index 0a559d6..83397db 100644
+index 705804f..b05c83f 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -5,6 +5,7 @@ AC_CONFIG_AUX_DIR([build-aux])
+@@ -1,6 +1,8 @@
+ AC_INIT([hello], [1.0])
+ AC_PREREQ([2.69])
+ AC_CONFIG_SRCDIR([src/hello.c])
++AC_CONFIG_MACRO_DIR([m4])
++AC_CONFIG_AUX_DIR([build-aux])
  LT_INIT
  LT_PREREQ([2.4])
  AM_INIT_AUTOMAKE([foreign 1.13 subdir-objects])
-+AM_SILENT_RULES([yes])
- AC_PROG_CC
- AC_CHECK_FUNCS([printf foobar])
- AC_SEARCH_LIBS([dlopen], [dl])

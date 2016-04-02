@@ -4,6 +4,7 @@ AC_CONFIG_SRCDIR([src/hello.c])
 LT_INIT
 LT_PREREQ([2.4])
 AM_INIT_AUTOMAKE([foreign 1.13 subdir-objects])
+AM_SILENT_RULES([yes])
 AC_PROG_CC
 AC_CHECK_FUNCS([printf foobar])
 AC_SEARCH_LIBS([dlopen], [dl])
